@@ -1,6 +1,13 @@
-import { createStore } from 'redux'
-import gitReducer from './reducers/gitReducer'
+import { createStore, combineReducers } from 'redux'
+import profileReducer from './reducers/profileReducer'
+import reposReducer from './reducers/reposReducer'
 
-const store = createStore(gitReducer)
+const rootReducer = combineReducers({
+    profileReducer,
+    reposReducer
+})
+
+const store = createStore(rootReducer)
+
 
 export default store

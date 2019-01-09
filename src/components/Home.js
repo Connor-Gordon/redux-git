@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import Profile from './Profile'
+import Repos from './Repos'
 
 class Home extends Component {
   render() {
     return (
-        <div>
+        <div className="mainContainer">
             <Profile />
+            <Repos />
         </div>
     )
   }

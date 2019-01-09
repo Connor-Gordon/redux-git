@@ -11,14 +11,14 @@ componentDidMount() {
     render() {
         return (
             <div>
-                <ul>
+                <ul className="profileList">
                     <li><img id="avatar" src={this.props.profile.avatar_url}/></li>
-                    <li>{this.props.profile.name}</li>
-                    <li>{this.props.profile.login}</li>
+                    <li id="name">{this.props.profile.name}</li>
+                    <li id="login">{this.props.profile.login}</li>
                     <li>{this.props.profile.location}</li>
                     <li>{this.props.profile.blog}</li>
                     <li>{this.props.profile.email}</li>
-                    <li>{this.props.profile.html_url}</li>
+                    <li><a href={this.props.profile.html_url}>{this.props.profile.html_url}</a></li>
                 </ul>
             </div>
         )
@@ -27,7 +27,7 @@ componentDidMount() {
 
 function mapStateToProps(appState) {
     return {
-        profile: appState.profile
+        profile: appState.profileReducer.profile
     }
 }
 
